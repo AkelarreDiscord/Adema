@@ -1,6 +1,7 @@
 console.log('Franco ha resucitado');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const token = process.env.token;
 bot.on('message', (message) => {
 	if (message.content == 'Arriba España') {
 		message.channel.sendMessage('Muera el mal gobierno');
@@ -12,4 +13,4 @@ bot.on('message', (message) => {
 		message.channel.sendMessage('¡Troll! Arderas en el infierno.');
 	}
 });
-bot.login('NjY5MjY0Mjg4NjkwNDcwOTEy.XidUSA.TgNndbEAfwJZmUXYIc9O4LWSXUg');
+bot.login(token).catch(err => console.log(err));
